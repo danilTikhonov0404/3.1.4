@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(successUserHandler)
                 .failureUrl("/auth/login?error")
                 .and()
-                .logout().logoutUrl("/logout").logoutSuccessUrl("/auth/login");
+                .logout().logoutUrl("/logout").logoutSuccessUrl("/login");
     }
 
     protected void configure(AuthenticationManagerBuilder auth)throws Exception{
