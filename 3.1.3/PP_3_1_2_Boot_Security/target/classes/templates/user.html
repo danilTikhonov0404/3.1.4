@@ -18,7 +18,7 @@
 						th:utext="${authUser.getName()}"></li>
 					<li class="list-inline-item text-white navbar-brand">with roles:</li>
 					<span th:each="role: ${authUser.getRoles()}">
-						<li class="list-inline-item text-white navbar-brand" th:utext="${role.roleName}">
+						<li class="list-inline-item text-white navbar-brand" th:utext="${role.getRoleNameWithoutPrefix()}">
 							<strong></strong></li>
 					</span>
 

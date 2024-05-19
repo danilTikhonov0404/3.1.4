@@ -18,7 +18,7 @@
 					th:utext="${authUser.getName()}"></li>
 				<li class="list-inline-item text-white navbar-brand">with roles:</li>
 				<span th:each="role: ${authUser.getRoles()}">
-            <li class="list-inline-item text-white navbar-brand" th:utext="${role.roleName}">
+            <li class="list-inline-item text-white navbar-brand" th:utext="${role.getRoleNameWithoutPrefix()}">
               <strong></strong></li>
             </span>
 
@@ -77,7 +77,7 @@
 
 							<td>
 								<div th:each="role : ${user.getRoles()}">
-									<div th:text="${role.getAuthority()}">user</div>
+									<div th:text="${role.getRoleNameWithoutPrefix()}">user</div>
 								</div>
 							</td>
 							<td>
@@ -141,7 +141,7 @@
 													<option th:each="role:${roles}"
 															th:value="${role.id}"
 															th:selected="${user.getRoles().contains(role)}">
-														<th:block th:text="${role.toString()}">
+														<th:block th:text="${role.getRoleNameWithoutPrefix()}">
 														</th:block>
 													</option>
 												</select>
@@ -196,7 +196,7 @@
 												</div>
 												<div>Roles</div>
 												<div th:each="role : ${user.getRoles()}">
-													<div th:text="${role.getAuthority()}">user</div>
+													<div th:text="${role.getRoleNameWithoutPrefix()}">user</div>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
@@ -260,7 +260,7 @@
 													size="2">
 												<option th:each="role : ${roles}"
 														th:value="${role.id}"
-														th:text="${role.roleName}"
+														th:text="${role.getRoleNameWithoutPrefix()}"
 														th:field="*{roles}"></option>
 											</select>
 										</div>
@@ -301,7 +301,7 @@
 			<td th:utext="${authUser.getAge()}">Age</td>
 			<td>
 				<div th:each="role : ${authUser.getRoles()}">
-					<div th:text="${role.getAuthority()}">user</div>
+					<div th:text="${role.getRoleNameWithoutPrefix()}">user</div>
 				</div>
 			</td>
 			</tbody>

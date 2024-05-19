@@ -19,7 +19,6 @@ public class Role implements GrantedAuthority {
     }
 
 
-
     public Role(String roleName) {
 
         this.roleName = roleName;
@@ -37,10 +36,15 @@ public class Role implements GrantedAuthority {
         return roleName;
     }
 
+    public String getRoleNameWithoutPrefix() {
+        return roleName.substring(5);
+
+    }
+
+
     public void setRoleName(String roleName) {
         this.roleName = roleName;
     }
-
 
 
     @Override
