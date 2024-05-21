@@ -64,7 +64,7 @@
 						<td th:utext="${authUser.getAge()}">Age</td>
 						<td>
 							<div th:each="role : ${authUser.getRoles()}">
-								<div th:text="${role.getAuthority()}">user</div>
+								<div th:text="${role.getRoleNameWithoutPrefix()}">user</div>
 							</div>
 						</td>
 					</tbody>
